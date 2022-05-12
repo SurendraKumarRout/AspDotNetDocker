@@ -10,6 +10,9 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out
 
+# install nodejs 
+RUN sudo apt install nodejs
+
 # build runtime image
 #FROM microsoft/aspnetcore:2.0
 WORKDIR /app
